@@ -16,7 +16,7 @@ using namespace std;
 *	Вывод IP адреса из целого числа
 */
 template<typename T>
-typename enable_if_t<is_integral_v<T>>
+typename enable_if<is_integral<T>::value>::type
 print_ip(T ip)
 {
 	int size = sizeof(ip);
@@ -37,7 +37,7 @@ print_ip(T ip)
 *	Проверка на наличие в типе Т функции emplace, в обоих контейнерах она есть
 */
 template<typename T>
-typename enable_if_t<is_member_function_pointer_v<decltype(&T::emplace<>)>>
+typename enable_if<is_member_function_pointer<decltype(&T::emplace<>)>::value>::type
 print_ip(T ip)
 {
 	for (auto p = ip.cbegin(); p != ip.cend(); ++p)
@@ -53,7 +53,7 @@ print_ip(T ip)
 *	Вывод IP адреса из объекта string
 */
 template<typename T>
-typename enable_if_t<is_same_v<T, string>>
+typename enable_if<is_same<T, string>::value>::type
 print_ip(T ip)
 {
 	cout << ip << endl;
