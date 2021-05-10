@@ -37,7 +37,7 @@ print_ip(T ip)
 *	Проверка на наличие в типе Т функции emplace, в обоих контейнерах она есть
 */
 template<typename T>
-typename enable_if<is_member_function_pointer<decltype(&T::emplace<>)>::value>::type
+typename enable_if<is_member_function_pointer<decltype(&T::emplace<int>)>::value>::type
 print_ip(T ip)
 {
 	for (auto p = ip.cbegin(); p != ip.cend(); ++p)
