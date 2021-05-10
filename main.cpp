@@ -35,9 +35,9 @@ print_ip(T ip)
 /**
 *	Вывод IP адреса из контейнера vector или list
 *	Проверка на наличие в типе Т функции emplace, в обоих контейнерах она есть
-*/
+*//*
 template<typename T>
-typename enable_if<is_member_function_pointer<decltype(&T::emplace<int>)>::value>::type
+typename enable_if<is_member_function_pointer<decltype(&T::emplace<>)>::value>::type
 print_ip(T ip)
 {
 	for (auto p = ip.cbegin(); p != ip.cend(); ++p)
@@ -47,7 +47,7 @@ print_ip(T ip)
 	}
 
 	cout << endl;
-}
+}*/
 
 /**
 *	Вывод IP адреса из объекта string
@@ -71,7 +71,7 @@ struct ForeachCallback
 		using first_type = typename tuple_element<0, T>::type;
 		using current_type = typename remove_cv<typename remove_reference<U>::type>::type;
 
-		static_assert(is_same_v<first_type, current_type>, "Objects with different types in the tuple");
+		static_assert(is_same<first_type, current_type>::value, "Objects with different types in the tuple");
 
 		if (index) cout << ".";
 		std::cout << element;
@@ -96,7 +96,7 @@ int main()
 	print_ip(int{ 2130706433 }); // 127.0.0.1 
 	print_ip(long long{ 8875824491850138409 }); // 123.45.67.89.101.112.131.41 
 	print_ip(string{ "Hello, World!" }); // Hello, World! 
-	print_ip(vector<int>{100, 200, 300, 400}); // 100.200.300.400 
-	print_ip(list<short>{400, 300, 200, 100}); // 400.300.200.100 
+	//print_ip(vector<int>{100, 200, 300, 400}); // 100.200.300.400 
+	//print_ip(list<short>{400, 300, 200, 100}); // 400.300.200.100 
 	print_ip(make_tuple(123, 456, 789, 0));  // 123.456.789.0
 }
