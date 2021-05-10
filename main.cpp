@@ -98,5 +98,5 @@ int main()
 	print_ip(string{ "Hello, World!" }); // Hello, World! 
 	//print_ip(vector<int>{100, 200, 300, 400}); // 100.200.300.400 
 	//print_ip(list<short>{400, 300, 200, 100}); // 400.300.200.100 
-	//print_ip(make_tuple(123, 456, 789, 0));  // 123.456.789.0
+	print_ip(make_tuple(123, 456, 789, 0));  // 123.456.789.0
 }
