@@ -81,7 +81,7 @@ struct ForeachCallback
 /**
 *	Вывод IP адреса из кортежа
 */
-template<typename T, typename=tuple_element<0, T>::type>
+template<typename T, typename = typename tuple_element<0, T>::type>
 void print_ip(T ip)
 {
 	tuple_utils::tupleForeach(ForeachCallback<T>(), ip);
