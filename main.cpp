@@ -16,7 +16,8 @@ using namespace std;
 *	Вывод IP адреса из целого числа
 */
 template<typename T>
-auto print_ip(T ip) -> typename enable_if_t<is_integral<T>::value>
+typename enable_if<is_integral<T>::value>::type
+print_ip(T ip)
 {
 	int size = sizeof(ip);
 
