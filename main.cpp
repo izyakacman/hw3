@@ -83,7 +83,8 @@ struct ForeachCallback
 template<typename T, typename = typename tuple_element<0, T>::type>
 void print_ip(T ip)
 {
-	tuple_utils::tupleForeach(ForeachCallback/*<T>*/(), ip);
+	ForeachCallback cb;
+	tuple_utils::tupleForeach(cb, ip);
 
 	cout << endl;
 }

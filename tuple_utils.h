@@ -47,7 +47,7 @@ namespace tuple_utils
 
     } //
     template<class TCallback, class ...TParams>
-    void tupleForeach(TCallback callback, const std::tuple<TParams...>& tuple)
+    void tupleForeach(TCallback& callback, const std::tuple<TParams...>& tuple)
     {
         _foreach_<sizeof...(TParams), TCallback, TParams...>::tupleForeach_(callback, tuple);
     }
