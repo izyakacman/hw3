@@ -34,10 +34,9 @@ print_ip(T ip)
 
 /**
 *	Вывод IP адреса из контейнера vector или list
-*	Проверка на наличие в типе Т функции emplace, в обоих контейнерах она есть
 */
 template<typename T>
-typename enable_if<is_member_function_pointer<decltype(&T::emplace<int>)>::value>::type
+typename enable_if<is_same<T, vector<typename T::value_type>>::value>::type
 print_ip(T ip)
 {
 	for (auto p = ip.cbegin(); p != ip.cend(); ++p)
