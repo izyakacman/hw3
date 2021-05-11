@@ -65,7 +65,7 @@ $(function() {
 <div class="title">print_ip.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PRINT_IP_H</span></div>
+<a href="print__ip_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PRINT_IP_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PRINT_IP_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -75,13 +75,13 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;tuple_utils.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tuple__utils_8h.html">tuple_utils.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typename</span> enable_if&lt;is_integral&lt;T&gt;::value&gt;::type</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;print_ip(T ip)</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a8302d97090214aa417de5234ec3dd1f0">   20</a></span>&#160;<a class="code" href="print__ip_8h.html#a8302d97090214aa417de5234ec3dd1f0">print_ip</a>(T ip)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> size = <span class="keyword">sizeof</span>(ip);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">typename</span> enable_if&lt;is_same&lt;T, vector&lt;typename T::value_type&gt;&gt;::value || is_same&lt;T, list&lt;typename T::value_type&gt;&gt;::value&gt;::type</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;print_ip(T ip)</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="print__ip_8h.html#ad88781c893fee0e6addcf2e30835d504">   40</a></span>&#160;<a class="code" href="print__ip_8h.html#a8302d97090214aa417de5234ec3dd1f0">print_ip</a>(T ip)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> p = ip.cbegin(); p != ip.cend(); ++p)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">typename</span> enable_if&lt;is_same&lt;T, string&gt;::value&gt;::type</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;print_ip(T ip)</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a3b21bc63d2cf7f2612db4e8832e5063e">   56</a></span>&#160;<a class="code" href="print__ip_8h.html#a8302d97090214aa417de5234ec3dd1f0">print_ip</a>(T ip)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cout &lt;&lt; ip &lt;&lt; endl;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
@@ -119,10 +119,10 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="struct_foreach_callback.html">   65</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_foreach_callback.html">ForeachCallback</a></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">using</span> first_type = <span class="keyword">typename</span> tuple_element&lt;0, T&gt;::type;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="struct_foreach_callback.html#ac511ac33eaa3f2057b46207984bc7634">   67</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="struct_foreach_callback.html#ac511ac33eaa3f2057b46207984bc7634">first_type</a> = <span class="keyword">typename</span> tuple_element&lt;0, T&gt;::type;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> operator()(U&amp;&amp; element, <span class="keyword">const</span> <span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="struct_foreach_callback.html#a7c7374edbd842ecbd51f4b699eede310">   70</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="struct_foreach_callback.html#a7c7374edbd842ecbd51f4b699eede310">operator()</a>(U&amp;&amp; element, <span class="keyword">const</span> <span class="keywordtype">size_t</span> index)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">using</span> current_type = <span class="keyword">typename</span> remove_cv&lt;typename remove_reference&lt;U&gt;::type&gt;::type;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
@@ -134,16 +134,21 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;template&lt;typename T, typename = typename tuple_element&lt;0, T&gt;::type&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> print_ip(T ip)</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="print__ip_8h.html#a14ecaeb827c76500416f99a606e63502">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="print__ip_8h.html#a8302d97090214aa417de5234ec3dd1f0">print_ip</a>(T ip)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="struct_foreach_callback.html">ForeachCallback&lt;T&gt;</a> cb;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    tuple_utils::tupleForeach(cb, ip);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="namespacetuple__utils.html#aa4a49c3ca87d9fe3554a6dabcd0a2433">tuple_utils::tupleForeach</a>(cb, ip);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    cout &lt;&lt; endl;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespacetuple__utils_html_aa4a49c3ca87d9fe3554a6dabcd0a2433"><div class="ttname"><a href="namespacetuple__utils.html#aa4a49c3ca87d9fe3554a6dabcd0a2433">tuple_utils::tupleForeach</a></div><div class="ttdeci">void tupleForeach(TCallback &amp;callback, const std::tuple&lt; TParams... &gt; &amp;tuple)</div><div class="ttdef"><b>Definition:</b> tuple_utils.h:38</div></div>
+<div class="ttc" id="aprint__ip_8h_html_a8302d97090214aa417de5234ec3dd1f0"><div class="ttname"><a href="print__ip_8h.html#a8302d97090214aa417de5234ec3dd1f0">print_ip</a></div><div class="ttdeci">enable_if&lt; is_integral&lt; T &gt;::value &gt;::type print_ip(T ip)</div><div class="ttdef"><b>Definition:</b> print_ip.h:20</div></div>
 <div class="ttc" id="astruct_foreach_callback_html"><div class="ttname"><a href="struct_foreach_callback.html">ForeachCallback</a></div><div class="ttdef"><b>Definition:</b> print_ip.h:66</div></div>
+<div class="ttc" id="astruct_foreach_callback_html_a7c7374edbd842ecbd51f4b699eede310"><div class="ttname"><a href="struct_foreach_callback.html#a7c7374edbd842ecbd51f4b699eede310">ForeachCallback::operator()</a></div><div class="ttdeci">void operator()(U &amp;&amp;element, const size_t index)</div><div class="ttdef"><b>Definition:</b> print_ip.h:70</div></div>
+<div class="ttc" id="astruct_foreach_callback_html_ac511ac33eaa3f2057b46207984bc7634"><div class="ttname"><a href="struct_foreach_callback.html#ac511ac33eaa3f2057b46207984bc7634">ForeachCallback::first_type</a></div><div class="ttdeci">typename tuple_element&lt; 0, T &gt;::type first_type</div><div class="ttdef"><b>Definition:</b> print_ip.h:67</div></div>
+<div class="ttc" id="atuple__utils_8h_html"><div class="ttname"><a href="tuple__utils_8h.html">tuple_utils.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
