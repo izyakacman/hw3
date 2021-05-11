@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("print_ip" VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 
 set_target_properties("print_ip" PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
 
