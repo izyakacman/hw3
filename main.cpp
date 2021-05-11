@@ -65,7 +65,7 @@ print_ip(T ip)
 struct ForeachCallback
 {
 	template<size_t index, typename U>
-	void operator()(U&& element)
+	void operator()(U& element)
 	{
 		//using first_type = typename tuple_element<0, T>::type;
 		//using current_type = typename remove_cv<typename remove_reference<U>::type>::type;
