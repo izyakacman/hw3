@@ -1,4 +1,4 @@
-#ifndef PRINT_IP_H
+п»ї#ifndef PRINT_IP_H
 #define PRINT_IP_H
 
 #include <iostream>
@@ -13,7 +13,7 @@
 using namespace std;
 
 /**
-*	Вывод IP адреса из целого числа
+*	Р’С‹РІРѕРґ IP Р°РґСЂРµСЃР° РёР· С†РµР»РѕРіРѕ С‡РёСЃР»Р°
 */
 template<typename T>
 typename enable_if<is_integral<T>::value>::type
@@ -33,7 +33,7 @@ print_ip(T ip)
 }
 
 /**
-*	Вывод IP адреса из контейнера vector или list
+*	Р’С‹РІРѕРґ IP Р°РґСЂРµСЃР° РёР· РєРѕРЅС‚РµР№РЅРµСЂР° vector РёР»Рё list
 */
 template<typename T>
 typename enable_if<is_same<T, vector<typename T::value_type>>::value || is_same<T, list<typename T::value_type>>::value>::type
@@ -49,7 +49,7 @@ print_ip(T ip)
 }
 
 /**
-*	Вывод IP адреса из объекта string
+*	Р’С‹РІРѕРґ IP Р°РґСЂРµСЃР° РёР· РѕР±СЉРµРєС‚Р° string
 */
 template<typename T>
 typename enable_if<is_same<T, string>::value>::type
@@ -59,7 +59,7 @@ print_ip(T ip)
 }
 
 /**
-*	Callback для tuple_utils::tupleForeach
+*	Callback РґР»СЏ tuple_utils::tupleForeach
 */
 template <typename T>
 struct ForeachCallback
@@ -79,7 +79,7 @@ struct ForeachCallback
 };
 
 /**
-*	Вывод IP адреса из кортежа
+*	Р’С‹РІРѕРґ IP Р°РґСЂРµСЃР° РёР· РєРѕСЂС‚РµР¶Р°
 */
 template<typename T, typename = typename tuple_element<0, T>::type>
 void print_ip(T ip)
