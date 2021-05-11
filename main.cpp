@@ -90,8 +90,6 @@ void print_ip(T ip)
 
 int main()
 {
-	//static_assert(is_member_function_pointer_v<decltype(&vector<int>::emplace1<>)>, "!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
 	print_ip(char{ -1 }); // 255 
 	print_ip(short{ 0 }); // 0.0 
 	print_ip(int{ 2130706433 }); // 127.0.0.1 

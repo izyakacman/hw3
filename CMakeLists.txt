@@ -8,6 +8,11 @@ project ("print_ip" VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (print_ip "main.cpp"   "tuple_utils.h"  )
 
+set_target_properties("print_ip" PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+)
+
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
 
 install(TARGETS print_ip RUNTIME DESTINATION bin)
