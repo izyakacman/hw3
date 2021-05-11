@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("print_ip" VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (print_ip "main.cpp"   "tuple_utils.h"  )
+add_executable (print_ip "main.cpp"   "tuple_utils.h" "print_ip.h")
 
 set_target_properties("print_ip" PROPERTIES
     CXX_STANDARD 17
