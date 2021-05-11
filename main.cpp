@@ -61,16 +61,16 @@ print_ip(T ip)
 /**
 *	Callback для tupleForeach
 */
-template <typename T>
+//template <typename T>
 struct ForeachCallback
 {
 	template<size_t index, typename U>
 	void operator()(U&& element)
 	{
-		using first_type = typename tuple_element<0, T>::type;
-		using current_type = typename remove_cv<typename remove_reference<U>::type>::type;
+		//using first_type = typename tuple_element<0, T>::type;
+		//using current_type = typename remove_cv<typename remove_reference<U>::type>::type;
 
-		static_assert(is_same<first_type, current_type>::value, "Objects with different types in the tuple");
+		//static_assert(is_same<first_type, current_type>::value, "Objects with different types in the tuple");
 
 		if (index) cout << ".";
 		std::cout << element;
@@ -83,7 +83,7 @@ struct ForeachCallback
 template<typename T, typename = typename tuple_element<0, T>::type>
 void print_ip(T ip)
 {
-	tuple_utils::tupleForeach(ForeachCallback<T>(), ip);
+	tuple_utils::tupleForeach(ForeachCallback/*<T>*/(), ip);
 
 	cout << endl;
 }
@@ -97,5 +97,5 @@ int main()
 	print_ip(string{ "Hello, World!" }); // Hello, World! 
 	print_ip(vector<int>{100, 200, 300, 400}); // 100.200.300.400 
 	print_ip(list<short>{400, 300, 200, 100}); // 400.300.200.100 
-	//print_ip(make_tuple(123, 456, 789, 0));  // 123.456.789.0
+	print_ip(make_tuple(123, 456, 789, 0));  // 123.456.789.0
 }
