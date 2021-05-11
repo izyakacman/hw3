@@ -59,18 +59,19 @@ print_ip(T ip)
 }
 
 /**
-*	Callback для tupleForeach
+*	Callback для tuple_utils::tupleForeach
 */
-//template <typename T>
+template <typename T>
 struct ForeachCallback
 {
-	template<size_t index, typename U>
-	void operator()(U&& element)
-	{
-		//using first_type = typename tuple_element<0, T>::type;
-		//using current_type = typename remove_cv<typename remove_reference<U>::type>::type;
+	using first_type = typename tuple_element<0, T>::type;
 
-		//static_assert(is_same<first_type, current_type>::value, "Objects with different types in the tuple");
+	template<typename U>
+	void operator()(U&& element, const size_t index)
+	{
+		using current_type = typename remove_cv<typename remove_reference<U>::type>::type;
+
+		static_assert(is_same<first_type, current_type>::value, "Objects with different types in the tuple");
 
 		if (index) cout << ".";
 		std::cout << element;
@@ -83,7 +84,7 @@ struct ForeachCallback
 template<typename T, typename = typename tuple_element<0, T>::type>
 void print_ip(T ip)
 {
-	ForeachCallback cb;
+	ForeachCallback<T> cb;
 	tuple_utils::tupleForeach(cb, ip);
 
 	cout << endl;

@@ -9,18 +9,6 @@
 
 namespace tuple_utils
 {
-    // вызвать 'callback' для каждого элемента кортежа
-    /*
-        struct callback
-        {
-            template<std::size_t, class T>
-            void operator()( T&& element )
-            {
-                // do something
-            }
-        };
-        tupleForeach( callback(), myTuple );
-    */
     template<class TCallback, class ...TParams>
     void tupleForeach(TCallback& callback, const std::tuple<TParams...>& tuple);
 
@@ -34,7 +22,7 @@ namespace tuple_utils
             {
                 // такой пересчёт необходим для выполнения callback'a над элементами в порядке их следования
                 const std::size_t idx = sizeof...(TParams) - Index;
-                callback.operator() < idx > (std::get<idx>(tuple));
+                callback.operator()(std::get<idx>(tuple), idx);
                 _foreach_<Index - 1, TCallback, TParams...>::tupleForeach_(callback, tuple);
             }
         };
